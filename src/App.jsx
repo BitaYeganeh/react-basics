@@ -1,33 +1,8 @@
-import './App.css'
-import Crad from "./components/Card";
-import Footer from "./components/Footer"
-import Header from "./components/Header"
+import './Card.module.css';
+import Card from "./components/Card.jsx";
+import Footer from "./components/Footer.jsx"
+import Header from "./components/Header.jsx"
 
-function Header() {
-  return (
-    <div class="header">
-      <h1>Logo</h1>
-    </div>
-  )
-}
-
-function Card(props) {
-  return (
-    <div className="card">
-      <h2>{props.name}</h2>
-      <p>Title: {props.title}</p>
-      <p>Age: {props.age}</p>
-    </div>
-  );
-}
-
-function Footer(){
-  return(
-    <div class="footer">
-      <h1>Copyrights</h1>
-    </div>
-  )
-}
 
 function App() {
   return (
