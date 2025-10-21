@@ -1,0 +1,23 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    min-width: 200px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgb(0,,0,0,0.1);
+    min-height: 200px;
+}
+
+.name {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+.title, .age {
+    font-size: 14px;
+}
