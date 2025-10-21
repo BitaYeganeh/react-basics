@@ -1,9 +1,11 @@
-function Footer(){
-  return(
-    <div class="footer">
-      <h1>Copyrights</h1>
-    </div>
-  )
-}
+import styles from "./Footer.module.css";
+
+const Footer = () => {
+  return (
+    <footer className={styles.footer}>
+      <p>Copyrights</p>
+    </footer>
+  );
+};
 
 export default Footer;

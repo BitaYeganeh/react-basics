@@ -1,9 +1,11 @@
-function Header() {
+import styles from "./Header.module.css";
+
+const Header = () => {
   return (
-    <div class="header">
+    <header className={styles.header}>
       <h1>Logo</h1>
-    </div>
-  )
-}
+    </header>
+  );
+};
 
 export default Header;

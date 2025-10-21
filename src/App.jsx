@@ -1,23 +1,20 @@
-import './Card.module.css';
-import Card from "./components/Card.jsx";
-import Footer from "./components/Footer.jsx"
-import Header from "./components/Header.jsx"
-
+import "./App.css";
+import Card from "./components/Card";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 function App() {
   return (
-    <>
-      <div>
-        <Header />
-        <div className="card-container">
+    <div className="app">
+      <Header />
+      <main className="main-content">
         <Card name="Maria" title="CEO" age="29" />
         <Card name="Kati" title="Developer" age="25" />
         <Card name="Karin" title="Designer" age="45" />
-        </div>
-        <Footer />
-      </div>
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
-export default App
+export default App;
