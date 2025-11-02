@@ -13,7 +13,7 @@ const Counter = ({count, setCount}) => {
        const handleBackgroundColor = () => {
         switch (true) {
             case count === 0:
-                 return "grey";
+                 return "blue";
             case count > 0:
                 return "green";
             case count < 0:

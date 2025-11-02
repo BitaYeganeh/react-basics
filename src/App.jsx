@@ -29,7 +29,7 @@ function App() {
     <div className="app">
       <Header />
       <main className="main-content">
-        <button onClick={handleClick}>Add Employee</button>
+        <button onClick={handleClick} className="addEmployeeButton">Add Employee</button>
         {employees.map((employee) => {
           console.log(employee);
           return(
