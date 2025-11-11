@@ -1,77 +1,34 @@
-import { useState } from "react";
 import "./App.css";
-import Card from "./components/Card";
-import Counter  from "./components/Counter";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import data from "./data";
-import Form from "./components/Form"
+//import {BrowserRouter, Routes, Route, createBrowserRouter} from "react-router";
+import Home from "./components/Home";
+import About from "./components/About";
+import { createBrowserRouter, RouterProvider } from "react-router";
+
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/about" element={<About />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element: <Home />
+  },
+  {
+    path: "/about",
+    element: <About />
+  },
+  
+  
+]);
 
 function App() {
-
-  const[count, setCount] = useState(0);
-  const [employees, setEmployees] = useState(data);
-  const [formData, setFormData] = useState({
-    name: "",
-    title:"",
-    age:"",
-});
-
-  const handleClick = () => {
-    setEmployees([
-      ...employees,
-      {
-        id: employees.length + 1,
-        name: formData.name,
-        title: formData.title,
-        age: formData.age,
-        isFavourite: false,
-
-      },
-    ]);
-    
-  };
-
-const toggleFavourite = (id) => {
-  const updatedEmployees = employees.map((employee) => {
-    if (employee.id === id && employee.isFavourite === undefined) {
-      return {...employee, isFavourite : false}
-    } else if (employee.id === id){
-      return{...employee, isFavourite:!employee.isFavourite}
-    } else {
-      return employee;
-    }
-  })
-  setEmployees(updatedEmployees);
-}
-
-
-  return (
-    <div className="app">
-      <Header />
-      <main className="main-content">
-        {employees.map((employee) => {
-          console.log(employee);
-          return(
-          <Card 
-          key={employee.id}
-          {...employee}
-          toggleFavourite={toggleFavourite}
-          />
-          );
-        })}
-        <Counter count={count} setCount={setCount}/>
-        
-      </main>
-      <Form 
-      formData={formData} 
-      setFormData={setFormData} 
-      handleClick={handleClick}
-
-      />
-      <Footer count={count} setCount={setCount}/>
-    </div>
-  );
+  return (<RouterProvider router={router}/>)
 }
 
 export default App;

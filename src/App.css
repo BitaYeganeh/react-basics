@@ -25,20 +25,21 @@ body {
   gap: 40px;
   padding: 60px 20px;
 }
-.addEmployeeButton{
- background-color: blue;
-  color: white;
-  width:7rem;
-  height:3rem;
+.button{
+  font-weight: bold;
+  width:6rem;
+  height:2.5rem;
   padding-top:5px;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
   border-radius: 3px;
-  border-color: #f9f9f9;
-  cursor:pointer;
+  border-color: #111010;
+  
 }
-.addEmployeeButton:hover{
-  background-color: green;
+.button:hover{
+  background-color: blue;
+  color: white;
 }
+
 
 .buttons {
   display: flex;

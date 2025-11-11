@@ -18,12 +18,14 @@
   gap: 5px;
 }
 .formContainer button{
-  background-color:blue;
-  color:white;
+  background-color:#4ca9c9;
+  color:blue;
   width: 8rem;
   border-radius: 5px;
+ 
   
 }
+
 .formSummary {
   margin-top: 1.5rem;
   background-color:  #4ca9c9; /* light gray background */

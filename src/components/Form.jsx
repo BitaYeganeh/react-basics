@@ -54,7 +54,7 @@ return (
          onChange={handleChange} 
         
         />
-
+ {/* ADD EMPLOYEE BUTTON*/}
         <button 
         type="submit"
         className='button'
@@ -63,7 +63,10 @@ return (
         {/* <button type="button" onclick={handleClick}>
         Add employee
         </button>*/}
-       <button
+
+         {/* RESET FORM BUTTON*/}
+
+       <button className={styles.resetbutton}
        type="button"
        onClick={()=>
        setFormData({
