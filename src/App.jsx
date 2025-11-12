@@ -3,6 +3,8 @@ import "./App.css";
 import Home from "./components/Home";
 import About from "./components/About";
 import { createBrowserRouter, RouterProvider } from "react-router";
+import Layout from "./Layout";
+import ErrorPage from "./components/ErrorPage";
 
 // function App() {
 //   return (
@@ -15,14 +17,37 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 //   );
 // }
 const router = createBrowserRouter([
-  {
+{
+  path:"/",
+  element:<Layout />,
+  children: [
+     {
     path:"/",
-    element: <Home />
+    index: true,
+    element: <Home />,
   },
   {
     path: "/about",
-    element: <About />
+    element: <About />,
   },
+  {
+    path: "*",
+    element: <ErrorPage />,
+  },
+  ],
+}
+
+
+
+
+  // {
+  //   path:"/",
+  //   element: <Home />
+  // },
+  // {
+  //   path: "/about",
+  //   element: <About />
+  // },
   
   
 ]);

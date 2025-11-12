@@ -74,7 +74,6 @@ const toggleFavourite = (id) => {
   return (
     
     <div className="app">
-      <Header />
       <main className="main-content">
         {employees.map((employee) => {
           console.log(employee);
@@ -97,7 +96,6 @@ const toggleFavourite = (id) => {
       handleClick={handleClick}
 
       />
-      <Footer count={count} setCount={setCount}/>
     </div>
   );
 }
