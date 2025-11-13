@@ -11,6 +11,7 @@ body {
 }
 
 .app {
+  padding-top: 100px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -18,12 +19,11 @@ body {
 }
 
 .main-content {
-  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  padding: 60px 20px;
+  gap: 20px;
+  flex-wrap: nowrap
 }
 .button{
   font-weight: bold;
@@ -47,22 +47,19 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px; /* space between items */
-  padding: 20px;
-  background-color: #f9f9f9;
+  padding: 32px;
+  background-color: #e4ecd6;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  width: 220px;
-  margin: 40px auto;
 }
 
 .buttons button {
   background-color: #7f95ac;
   color: white;
   border: none;
+  width: 100px;
   padding: 10px 16px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .buttons button:hover {
@@ -93,7 +90,8 @@ body {
   padding-top:5px;
   padding-bottom: 5px;
   border-radius: 3px;
-  border-color: #f9f9f9;
+  border-color: greenyellow;
+  border-radius: 8px;
   cursor:pointer;
 
 }
@@ -101,4 +99,5 @@ body {
   background-color: green;
 
 }
+
 

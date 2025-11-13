@@ -8,7 +8,7 @@
       "isFavourite": true
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Kati",
       "title": "Developer",
       "age": 25,
@@ -19,6 +19,13 @@
       "name": "Karin",
       "title": "Designer",
       "age": 45
+    },
+    {
+      "id": "4",
+      "name": "Bita Yeganeh",
+      "title": "",
+      "age": "",
+      "isFavourite": false
     }
   ],
   "somethingElse": [
