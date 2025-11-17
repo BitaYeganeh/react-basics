@@ -19,12 +19,41 @@ body {
 }
 
 .main-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: nowrap
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+  grid-template-rows: repeat(2, auto);   /* 2 rows, height auto-adjusts */
+  gap: 20px;                              /* spacing between cards */
+  justify-items: center;                  /* centers items in each grid cell */
+  align-items: start;                     /* align items at top of cells */
 }
+.home-container {
+  display: flex;
+  gap: 40px; /* space between cards and form-counter */
+  padding: 20px;
+  align-items: flex-start; /* align top */
+}
+
+/* Cards grid: left side */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  /* Vertical divider on the right */
+  border-right: 2px solid #ccc; /* adjust color/thickness */
+  padding-right: 70px; /* spacing from divider to cards */
+}
+
+/* Right side: counter + form */
+.form-counter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 20px; /* spacing from divider to right panel */
+  min-width: 250px; /* optional */
+}
+
+
 .button{
   font-weight: bold;
   width:6rem;

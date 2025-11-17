@@ -74,29 +74,30 @@ const toggleFavourite = (id) => {
   return (
     
     <div className="app">
-      <main className="main-content">
-        {employees.map((employee) => {
-          console.log(employee);
-          return(
-          <Card 
-          key={employee.id}
-          {...employee}
-          toggleFavourite={toggleFavourite}
-          handleDelete={handleDelete}
+     <div className="home-container">
+  {/* Cards Grid */}
+  <div className="cards-container">
+    {employees.map((employee) => (
+      <Card 
+        key={employee.id}
+        {...employee}
+        toggleFavourite={toggleFavourite}
+        handleDelete={handleDelete}
+      />
+    ))}
+  </div>
 
-          />
-          );
-        })}
-        <Counter count={count} setCount={setCount}/>
-        
-      </main>
-      <Form 
+  {/* Counter + Form */}
+  <div className="form-counter-container">
+    <Counter count={count} setCount={setCount}/>
+    <Form 
       formData={formData} 
       setFormData={setFormData} 
       handleClick={handleClick}
-
-      />
-    </div>
+    />
+  </div>
+</div>
+</div>
   );
 }
 
