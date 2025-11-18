@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router";
+import styles from "./About.module.css";
 
 const About = () => {
 
@@ -11,10 +12,8 @@ const About = () => {
 
 
     return(
-    <div>
-    <p>
-    About will be here
-    </p>
+    <div className={styles.container}>
+    <p>About will be here</p>
     <button onClick={handleNavigate}>Return to Home</button>
     </div>
     );

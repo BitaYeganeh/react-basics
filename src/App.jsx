@@ -5,6 +5,8 @@ import About from "./components/About";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Layout from "./Layout";
 import ErrorPage from "./components/ErrorPage";
+import Todos from "./components/Todos";
+import SingleEmployee from "./components/SingleEmployee";
 
 // function App() {
 //   return (
@@ -27,8 +29,16 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
+    path: "/employees/:id",
+    element: <SingleEmployee />,
+  },
+  {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/todos",
+    element: <Todos />,
   },
   {
     path: "*",
@@ -36,10 +46,6 @@ const router = createBrowserRouter([
   },
   ],
 }
-
-
-
-
   // {
   //   path:"/",
   //   element: <Home />
@@ -48,8 +54,6 @@ const router = createBrowserRouter([
   //   path: "/about",
   //   element: <About />
   // },
-  
-  
 ]);
 
 function App() {

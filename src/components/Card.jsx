@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router";
 import styles from "./Card.module.css";
 
 const Card = ({
@@ -7,6 +8,7 @@ const Card = ({
   //we will pass an isFavourite prop to the Crad component
   // If isFavourite is true, we will add a heart to the card
   // If isFavourite is false ( or undefined, we will not add a heart to the card)
+  const navigate = useNavigate(); 
   return (
     <div className={styles.card}>
     <button className={styles.toggleFavourite}
@@ -21,9 +23,9 @@ const Card = ({
 
       {/*We do not currently have a favourite style in our CSS*/}
       <div className={styles.favourite}>{isFavourite && <span>❤️</span>}</div>
-
-
-    
+      <button onClick={() => navigate(`/employees/${id}`)}>
+        View Employee
+      </button>
     </div>
   );
 };

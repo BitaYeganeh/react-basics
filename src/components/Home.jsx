@@ -18,12 +18,23 @@ function Home() {
     title:"",
     age:"",
 });
+const [loading, setLoading] = useState(true);
+console.log("Components Rendered");
 
 useEffect(() => {
+  //comment error when handeling loading state:
+  //setLoading(true);//this is an error
+
   axios.get("http://localhost:3001/employees")
   .then((response) => {
     setEmployees(response.data);
-  });
+  })
+  .catch((error) => {
+    console.log("Error: ", error.message);
+  })
+  .finally(() => {
+    setLoading(false);
+  }); 
 }, []);
 
 const handleDelete = (id) => {
@@ -69,7 +80,9 @@ const toggleFavourite = (id) => {
   })
   setEmployees(updatedEmployees);
 }
-
+if (loading) {
+  return <div>Loading...</div>;
+}
 
   return (
     
