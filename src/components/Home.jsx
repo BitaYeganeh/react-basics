@@ -7,7 +7,8 @@ import Header from "../components/Header";
 //import data from "../data";
 import Form from "../components/Form";
 import axios from "axios";
-
+import {Button} from "@mui/material";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function Home() {
 
@@ -25,7 +26,7 @@ useEffect(() => {
   //comment error when handeling loading state:
   //setLoading(true);//this is an error
 
-  axios.get("http://localhost:3001/employees")
+  axios.get("https://react-basics-ye98.onrender.com/employees")
   .then((response) => {
     setEmployees(response.data);
   })
@@ -38,14 +39,14 @@ useEffect(() => {
 }, []);
 
 const handleDelete = (id) => {
-  axios.delete(`http://localhost:3001/employees/${id}`)
+  axios.delete(`https://react-basics-ye98.onrender.com/employees/${id}`)
   .then(() => {
     setEmployees(employees.filter((employee)=> employee.id !==id));
   })
 }
 
   const handleClick = () => {
-    axios.post("http://localhost:3001/employees", {
+    axios.post("https://react-basics-ye98.onrender.com/employees", {
         id: String(employees.length + 1),
         name: formData.name,
         title: formData.title,
@@ -87,6 +88,7 @@ if (loading) {
   return (
     
     <div className="app">
+    <Button variant="contained" color="limeGreen" sx={{padding: "200px"}} startIcon={<DeleteIcon />} >Click me I'm from MUI!</Button>
      <div className="home-container">
   {/* Cards Grid */}
   <div className="cards-container">

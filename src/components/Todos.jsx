@@ -40,30 +40,36 @@ const Todos = () => {
 
   
 }
-    return (
-        <div>
-        {/*Connect todos to uesers */}
-            <h2>Todos List</h2>
- <ul>
-      {todos.map((todo) => (
-        <div className={styles.todos} key={todo.id}>
-          id : {todo.id} 
-          title: {todo.title}
-        </div>
+return (
+  <div className={styles.container}>
+    <h2>Todos</h2>
+
+    {/* Scrollable Grid */}
+    <div className={styles.scrollArea}>
+      <div className={styles.grid}>
+        {todos.map((todo) => (
+          <div key={todo.id} className={styles.card}>
+            <p><strong>ID: {todo.id}</strong></p>
+            <p><strong>Title: {todo.title}</strong></p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <h2>Employees Info:</h2>
+
+    {/* NORMAL LIST for Users */}
+    <ul className={styles.userList}>
+      {users.map((user) => (
+        <li key={user.id} className={styles.userItem}>
+          <strong>{user.name}</strong> — {user.email}
+        </li>
       ))}
-</ul>
-        
-        <h2>Users List</h2>
-             <ul>              
-                {users.map((user) => (
-                    <li key={user.id}>
-                        {user.name} ({user.email})
-                    </li>
-                ))}
-             </ul>
-        </div>
-    )
-       
+    </ul>
+  </div>
+);
+
+
 };
 
 export default Todos;

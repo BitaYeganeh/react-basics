@@ -1,18 +1,24 @@
-import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useAxios from "../hooks/useAxios";
+import { useParams } from "react-router";
 
 const SingleEmployee = () => {
     const {id} = useParams();
     const [employee, setEmployee] = useState(null);
     console.log("Employee: ", employee);
-    const [loading, setLoading] = useState(true);
+    const [isloading, setIsLoading] = useState(false);
     const [isEditing, setIsEditing] = useState(false);  
+
     const [formData, setFormData] = useState({
         name: employee?.name || "",
         title: employee?.title || "",
         age: employee?.age || "",
     }); 
+
+const url = `https://react-basics-ye98.onrender.com/employees/${id}`;
+
+const {data, loading, error} = useAxios (url);
 
     const handleChange = (e) => {
         setFormData((prevState) => {
@@ -24,11 +30,9 @@ const SingleEmployee = () => {
     const toggleEdit = () => {
         setIsEditing(!isEditing);
     }
-
-
     const handleSave = () => {
         axios
-        .put(`http://localhost:3001/employees/${id}`, formData)
+        .put(`https://react-basics-ye98.onrender.com/employees/${id}`, formData)
         .then((response) => {
             setEmployee(response.data);
             setIsEditing(false);
@@ -38,27 +42,38 @@ const SingleEmployee = () => {
 
         }) 
         .finally(() => {
-            setLoading(false);
+            setIsLoading(false);
         });
     };
+    console.log("Data: ", data);
+    console.log("Loading: ", loading);
 
     useEffect(() => {
-        axios
-         .get(`http://localhost:3001/employees/${id}`)
-         .then((response) => {
-            setEmployee(response.data);
-            setFormData({
-                name: response.data.name,
-                title: response.data.title,
-                age: response.data.age,
-            });
-        })
-        .finally(() => {
-            setLoading(false);
+        if (data) {
+        setEmployee(data);
+        setFormData({
+            name: data.name,
+            title: data.title,
+            age: data.age,
         });
-    }, [id]);
+    }
+        
+        // axios
+        //  .get(`https://react-basics-ye98.onrender.com/employees/${id}`)
+        //  .then((response) => {
+        //     setEmployee(response.data);
+        //     setFormData({
+        //         name: response.data.name,
+        //         title: response.data.title,
+        //         age: response.data.age,
+        //     });
+        // })
+        // .finally(() => {
+        //     setIsLoading(false);
+        // });
+    }, [id, data, loading]);
 
-    if (loading) {
+    if (loading || isloading) {
         return <div>Loading...</div>;
     }
 
@@ -102,7 +117,7 @@ const SingleEmployee = () => {
             <p>Title: {employee?.title}</p>
             <p>Age: {employee?.age}</p>
             <p>Is Favourite: {employee?.isFavourite ? "Yes" : "No"}</p>
-            <button onClick={toggleEdit}>Edit</button>
+            <button className="editButton" onClick={toggleEdit}>Edit</button>
         </div>
     )
 };
