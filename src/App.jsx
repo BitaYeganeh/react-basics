@@ -7,6 +7,7 @@ import Layout from "./Layout";
 import ErrorPage from "./components/ErrorPage";
 import Todos from "./components/Todos";
 import SingleEmployee from "./components/SingleEmployee";
+import Employees from "./components/Employees";
 
 // function App() {
 //   return (
@@ -19,33 +20,37 @@ import SingleEmployee from "./components/SingleEmployee";
 //   );
 // }
 const router = createBrowserRouter([
-{
-  path:"/",
-  element:<Layout />,
-  children: [
-     {
-    path:"/",
-    index: true,
-    element: <Home />,
-  },
   {
-    path: "/employees/:id",
-    element: <SingleEmployee />,
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/employees/:id",
+        element: <SingleEmployee />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/todos",
+        element: <Todos />,
+      },
+      {
+        path: "/employees",
+        element: <Employees />,
+      },
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
+    ],
   },
-  {
-    path: "/about",
-    element: <About />,
-  },
-  {
-    path: "/todos",
-    element: <Todos />,
-  },
-  {
-    path: "*",
-    element: <ErrorPage />,
-  },
-  ],
-}
   // {
   //   path:"/",
   //   element: <Home />
@@ -57,7 +62,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (<RouterProvider router={router}/>)
+  return <RouterProvider router={router} />;
 }
 
 export default App;

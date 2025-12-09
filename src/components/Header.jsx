@@ -14,23 +14,30 @@ const Header = () => {
   //   </header>
   // );
 
-return( 
-<AppBar position="static">
-  <Toolbar>
-    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-      Logo
-    </Typography>
+  return (
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          Logo
+        </Typography>
 
-    <Box sx={{ display: 'flex', gap: 2, alignItems: 'center' }}>
-     <Button color="inherit" component={Link} to="/">Home</Button>
-     <Button color="inherit" component={Link} to="/about">About</Button>
-     <Button color="inherit" component={Link} to="/todos">Todos</Button>
-
-       
-    </Box>
-  </Toolbar>
-</AppBar>
-);
+        <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
+          <Button color="inherit" component={Link} to="/">
+            Home
+          </Button>
+          <Button color="inherit" component={Link} to="/about">
+            About
+          </Button>
+          <Button color="inherit" component={Link} to="/todos">
+            Todos
+          </Button>
+          <Button color="inherit" component={Link} to="/employees">
+            Employees
+          </Button>
+        </Box>
+      </Toolbar>
+    </AppBar>
+  );
 };
 
 export default Header;

@@ -7,7 +7,7 @@ import Header from "../components/Header";
 //import data from "../data";
 import Form from "../components/Form";
 import axios from "axios";
-import { Button } from "@mui/material";
+import { Button, ToggleButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CustomKideImage from "./CustomKideImage";
 import EmployeesTable from "./EmployeesTable";
@@ -111,6 +111,7 @@ function Home() {
             />
           ))}
         </div>
+        <EmployeesTable />
 
         {/* Counter + Form */}
         <div className="form-counter-container">
@@ -121,8 +122,8 @@ function Home() {
             handleClick={handleClick}
           />
         </div>
+        <div style={{ width: "100%", height: "500px" }}></div>
       </div>
-      <EmployeesTable />
     </div>
   );
 }
