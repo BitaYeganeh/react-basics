@@ -26,9 +26,9 @@ const CustomKideImage = () => {
     },
     imageCanvas: {
       position: "absolute",
-      width: "60%",
-      height: "40%",
-      top: 265,
+      width: "50%",
+      height: "35%",
+      top: 330,
       left: 0,
       backgroundImage: 'url("/Images/kide-hero-image.jpg")', // your hero image
       backgroundSize: "cover",

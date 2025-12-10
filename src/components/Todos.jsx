@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import styles from "./Todos.module.css";
+import Parent from "./Parent";
 
 const Todos = () => {
   const [todos, setTodos] = useState([]);
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  //add a  list of todo items
+  const sampleTodos = ["Buy milk", "Walk dog", "Study React"];
+  const handleClick = (item) => {
+    console.log(item);
+  };
   useEffect(() => {
     axios
       .get("https://jsonplaceholder.typicode.com/todos")
@@ -57,17 +63,38 @@ const Todos = () => {
           ))}
         </div>
       </div>
+      <br />
+      <div className={styles.sideBySide}>
+        <div className={styles.sampleTodos}>
+          <h2>Sample Todo Items:</h2>
 
-      <h2>Employees Info:</h2>
+          <ul>
+            {sampleTodos.map((item, index) => (
+              <li
+                key={index}
+                onClick={() => handleClick(item)}
+                className={styles.sampleItem}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+          <br />
+        </div>
+        <div className={styles.parentContainer} />
+        <h2>Parent Component </h2>
+        <Parent />
 
-      {/* NORMAL LIST for Users */}
-      <ul className={styles.userList}>
-        {users.map((user) => (
-          <li key={user.id} className={styles.userItem}>
-            <strong>{user.name}</strong> — {user.email}
-          </li>
-        ))}
-      </ul>
+        {/* NORMAL LIST for Users */}
+        <h2>Employees Info:</h2>
+        <ul className={styles.userList}>
+          {users.map((user) => (
+            <li key={user.id} className={styles.userItem}>
+              <strong>{user.name}</strong> — {user.email}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

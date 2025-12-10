@@ -11,7 +11,7 @@
 
 /* Scroll area for the grid */
 .scrollArea {
-  height: 600px;          /* prevents pushing footer */
+  height: 600px; /* prevents pushing footer */
   overflow-y: auto;
   padding-right: 5px;
   margin-bottom: 30px;
@@ -34,12 +34,25 @@
   border: 5px solid #4ca9c9;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0,0,0,0.08);
- 
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
 }
-.userlist .h2{
-    color:blue;
-   
-
+.userlist .h2 {
+  color: blue;
+}
+.sideBySide {
+  display: flex;
+  gap: 50px; /* space between the two sections */
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
+.sampleTodos,
+.parentContainer {
+  flex: 1; /* optional, adjusts width */
+  min-width: 250px;
+}
+
+.sampleItem {
+  cursor: pointer;
+  margin-bottom: 8px;
+}
