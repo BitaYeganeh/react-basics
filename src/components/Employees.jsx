@@ -1,23 +1,33 @@
 import { Button, TextField } from "@mui/material";
 import EmployeeDataGrid from "./EmployeeDataGrid";
-import React from "react";
+import React, { useState } from "react";
+import Loading from "./Loading";
 const Employees = () => {
   // create toggle button
   const toggleButton = () => {
     setIsOn((currentValue) => !currentValue);
   };
-  const [isOn, setIsOn] = React.useState(false);
+  const [isOn, setIsOn] = useState(false);
 
   //create text input
-  const [inputValue, setInputValue] = React.useState("");
+  const [inputValue, setInputValue] = useState("");
 
   return (
     <div>
-      <div>Employees Component</div>
+      <div
+        style={{
+          marginLeft: 30,
+          marginTop: 20,
+          fontSize: 24,
+          color: "#1976d2",
+        }}
+      >
+        Employees Component
+      </div>
       <Button
         variant="contained"
         onClick={toggleButton}
-        style={{ backgroundColor: isOn ? "green" : "red" }}
+        style={{ backgroundColor: isOn ? "green" : "red", marginLeft: 30 }}
       >
         {isOn ? "ON" : "OFF"}
       </Button>
@@ -35,8 +45,10 @@ const Employees = () => {
         }
         error={inputValue.length > 20} // automatically styles helperText red
         fullWidth
+        style={{ marginTop: 20, marginLeft: 30, maxWidth: 400 }}
       />{" "}
       <div>
+        <Loading />
         <EmployeeDataGrid />
       </div>
     </div>

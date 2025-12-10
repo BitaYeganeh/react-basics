@@ -34,6 +34,9 @@ const Header = () => {
           <Button color="inherit" component={Link} to="/employees">
             Employees
           </Button>
+          <Button color="inherit" component={Link} to="/filterlist">
+            FilterList
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>

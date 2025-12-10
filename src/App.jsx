@@ -8,7 +8,7 @@ import ErrorPage from "./components/ErrorPage";
 import Todos from "./components/Todos";
 import SingleEmployee from "./components/SingleEmployee";
 import Employees from "./components/Employees";
-
+import FilterList from "./components/FilterList";
 // function App() {
 //   return (
 //     <BrowserRouter>
@@ -45,6 +45,11 @@ const router = createBrowserRouter([
         path: "/employees",
         element: <Employees />,
       },
+      {
+        path: "/filterlist",
+        element: <FilterList />,
+      },
+
       {
         path: "*",
         element: <ErrorPage />,
