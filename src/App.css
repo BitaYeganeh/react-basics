@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+   
+}
+
+.app {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #c9e3ec;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns of equal width */
+  grid-template-rows: repeat(2, auto);   /* 2 rows, height auto-adjusts */
+  gap: 20px;                              /* spacing between cards */
+  justify-items: center;                  /* centers items in each grid cell */
+  align-items: start;                     /* align items at top of cells */
+}
+.home-container {
+  display: flex;
+  gap: 40px; /* space between cards and form-counter */
+  padding: 20px;
+  align-items: flex-start; /* align top */
+}
+
+/* Cards grid: left side */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  /* Vertical divider on the right */
+  border-right: 2px solid #ccc; /* adjust color/thickness */
+  padding-right: 70px; /* spacing from divider to cards */
+}
+
+/* Right side: counter + form */
+.form-counter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 250px; /* optional */
+  align-items: center;
+  margin-right: 20px;
+}
+
+
+.button{
+  font-weight: bold;
+  width:6rem;
+  height:2.5rem;
+  padding-top:5px;
+  padding-bottom: 7px;
+  border-radius: 3px;
+  border-color: #111010;
+  
+}
+.button:hover{
+  background-color: blue;
+  color: white;
+}
+
+
+.buttons {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* space between items */
+  padding: 32px;
+  background-color: #e4ecd6;
+  border-radius: 16px;
+}
+
+.buttons button {
+  background-color: #7f95ac;
+  color: white;
+  border: none;
+  width: 100px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.buttons div {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  width: 80px;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+}
+.footerCounterNumber {
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+.footerCounterButton {
+  background-color: blue;
+  color: white;
+  width:5rem;
+  height:2rem;
+  padding-top:5px;
+  padding-bottom: 5px;
+  border-radius: 3px;
+  border-color: greenyellow;
+  border-radius: 8px;
+  cursor:pointer;
+
+}
+.footerCounterButton:hover{
+  background-color: green;
+
+}
+
+

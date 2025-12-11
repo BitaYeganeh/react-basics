@@ -1,0 +1,58 @@
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #400cb1;
+}
+
+/* Scroll area for the grid */
+.scrollArea {
+  height: 600px; /* prevents pushing footer */
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-bottom: 30px;
+  border: 10px solid#bccdd3;
+  border-radius: 10px;
+  background: #fff;
+}
+
+/* Grid for todos */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 10px;
+}
+
+/* Card style */
+.card {
+  background: #fafafa;
+  border: 5px solid #4ca9c9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.08);
+}
+.userlist .h2 {
+  color: blue;
+}
+.sideBySide {
+  display: flex;
+  gap: 50px; /* space between the two sections */
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.sampleTodos,
+.parentContainer {
+  flex: 1; /* optional, adjusts width */
+  min-width: 250px;
+}
+
+.sampleItem {
+  cursor: pointer;
+  margin-bottom: 8px;
+}

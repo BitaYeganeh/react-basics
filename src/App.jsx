@@ -1,23 +1,73 @@
-import './Card.module.css';
-import Card from "./components/Card.jsx";
-import Footer from "./components/Footer.jsx"
-import Header from "./components/Header.jsx"
+import "./App.css";
+//import {BrowserRouter, Routes, Route, createBrowserRouter} from "react-router";
+import Home from "./components/Home";
+import About from "./components/About";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import Layout from "./Layout";
+import ErrorPage from "./components/ErrorPage";
+import Todos from "./components/Todos";
+import SingleEmployee from "./components/SingleEmployee";
+import Employees from "./components/Employees";
+import FilterList from "./components/FilterList";
+// function App() {
+//   return (
+//     <BrowserRouter>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         <Route path="/about" element={<About />} />
+//       </Routes>
+//     </BrowserRouter>
+//   );
+// }
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/employees/:id",
+        element: <SingleEmployee />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/todos",
+        element: <Todos />,
+      },
+      {
+        path: "/employees",
+        element: <Employees />,
+      },
+      {
+        path: "/filterlist",
+        element: <FilterList />,
+      },
 
+      {
+        path: "*",
+        element: <ErrorPage />,
+      },
+    ],
+  },
+  // {
+  //   path:"/",
+  //   element: <Home />
+  // },
+  // {
+  //   path: "/about",
+  //   element: <About />
+  // },
+]);
 
 function App() {
-  return (
-    <>
-      <div>
-        <Header />
-        <div className="card-container">
-        <Card name="Maria" title="CEO" age="29" />
-        <Card name="Kati" title="Developer" age="25" />
-        <Card name="Karin" title="Designer" age="45" />
-        </div>
-        <Footer />
-      </div>
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
