@@ -9,6 +9,8 @@ import Todos from "./components/Todos";
 import SingleEmployee from "./components/SingleEmployee";
 import Employees from "./components/Employees";
 import FilterList from "./components/FilterList";
+import ReactProblems from "./components/ReactProblems";
+import CustomKideImage from "./components/CustomKideImage";
 // function App() {
 //   return (
 //     <BrowserRouter>
@@ -46,8 +48,16 @@ const router = createBrowserRouter([
         element: <Employees />,
       },
       {
+        path: "/customkideimage",
+        element: <CustomKideImage />,
+      },
+      {
         path: "/filterlist",
         element: <FilterList />,
+      },
+      {
+        path: "/reactproblems",
+        element: <ReactProblems />,
       },
 
       {

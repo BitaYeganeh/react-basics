@@ -15,14 +15,14 @@ const Loading = () => {
   // if isLoading true show "Loading..."
   if (isLoading) {
     return (
-      <div style={{ fontSize: 24, color: "#1976d2", marginLeft: 60 }}>
+      <div style={{ fontSize: 24, color: "#46063dff", marginLeft: 60 }}>
         Loading...
       </div>
     );
   }
   //after loadng show"Data loaded"
   return (
-    <div style={{ fontSize: 24, color: "#1976d2", marginLeft: 60 }}>
+    <div style={{ fontSize: 24, color: "#68e22fff", marginLeft: 60 }}>
       Data loaded
     </div>
   );
