@@ -25,7 +25,8 @@ const EmployeesTable = () => {
     return <div>No data found!</div>;
   }
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} sx={{ minWidth: 650, flexShrink: 0 }}>
+      {" "}
       <Table>
         <TableHead>
           <TableRow>

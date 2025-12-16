@@ -1,20 +1,21 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { CssBaseline, ThemeProvider} from '@mui/material';
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import App from "./App.jsx";
-import theme from './theme/theme.js';
-
+import theme from "./theme/theme.js";
+import EmployeesProvider from "./contexts/employeesContext.jsx"; // import your provider
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
-    <CssBaseline />
-      <App />
-    </ThemeProvider>  
+      <EmployeesProvider>
+        <CssBaseline />
+        <App />
+      </EmployeesProvider>
+    </ThemeProvider>
   </StrictMode>
 );
-

@@ -11,42 +11,24 @@ import { Button, ToggleButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import CustomKideImage from "./CustomKideImage";
 import EmployeesTable from "./EmployeesTable";
+import useEmployees from "../hooks/useEmployees";
 
 function Home() {
+  const { employees, loading, error, fetchEmployees, handleDelete } =
+    useEmployees();
+
   const [count, setCount] = useState(0);
-  const [employees, setEmployees] = useState([]);
+
   const [formData, setFormData] = useState({
     name: "",
     title: "",
     age: "",
   });
-  const [loading, setLoading] = useState(true);
   console.log("Components Rendered");
 
   useEffect(() => {
-    //comment error when handeling loading state:
-    //setLoading(true);//this is an error
-
-    axios
-      .get("https://react-basics-ye98.onrender.com/employees")
-      .then((response) => {
-        setEmployees(response.data);
-      })
-      .catch((error) => {
-        console.log("Error: ", error.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+    fetchEmployees();
   }, []);
-
-  const handleDelete = (id) => {
-    axios
-      .delete(`https://react-basics-ye98.onrender.com/employees/${id}`)
-      .then(() => {
-        setEmployees(employees.filter((employee) => employee.id !== id));
-      });
-  };
 
   const handleClick = () => {
     axios
@@ -58,7 +40,7 @@ function Home() {
         isFavourite: false,
       })
       .then((response) => {
-        setEmployees([...employees, response.data]);
+        // setEmployees([...employees, response.data]);
       });
     // setEmployees([
     //   ...employees,
@@ -83,7 +65,7 @@ function Home() {
         return employee;
       }
     });
-    setEmployees(updatedEmployees);
+    // setEmployees(updatedEmployees);
   };
   if (loading) {
     return <div>Loading...</div>;
@@ -99,6 +81,8 @@ function Home() {
       >
         Click me I'm from MUI!
       </Button>
+      <EmployeesTable />
+
       <div className="home-container">
         {/* Cards Grid */}
         <div className="cards-container">
@@ -111,7 +95,6 @@ function Home() {
             />
           ))}
         </div>
-        <EmployeesTable />
 
         {/* Counter + Form */}
         <div className="form-counter-container">
