@@ -48,10 +48,6 @@ const router = createBrowserRouter([
         element: <Employees />,
       },
       {
-        path: "/customkideimage",
-        element: <CustomKideImage />,
-      },
-      {
         path: "/filterlist",
         element: <FilterList />,
       },
